@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ngRepeat</title>
+</head>
+
+<body ng-controller="myCtrl" ng-app="myMod">
+    <ul>
+        <li ng-repeat="(item.x, item.y) in fruits">{{item.x}}:{{item.y}}</li>
+    </ul>
+
+
+    <script src="../angular.min.js"></script>
+    <script>
+        var app = angular.module('myMod', []);
+        app.controller('myCtrl', function ($scope) {
+            $scope.fruits = [
+                {
+                    name: "Sponge Bob",
+                    age: 39,
+                },
+                {
+                    name: "Faisal",
+                    age: 22,
+                },
+                {
+                    name: "Vivek",
+                    age: 16,
+                }]
+        })
+
+        app.controller('myObj', function ($scope) {
+            $scope.fruits = {
+                name: "Sponge Bob",
+                age: 39,
+            };
+        });
+    </script>
+</body>
+
+</html>

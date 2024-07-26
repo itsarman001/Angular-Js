@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Angular Js</title>
+  </head>
+
+  <body ng-app="">
+    <label for="name"
+      >Name:
+      <input type="text" id="name" ng-model="kuchv" />
+    </label>
+    <h2 ng-bind="kuchv"></h2>
+    <h2>Welcome {{kuchv}}!</h2>
+    <span>the sum is {{3+5}}</span>
+    <script src="../angular.min.js"></script>
+  </body>
+</html>

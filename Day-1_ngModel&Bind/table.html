@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Angular Table</title>
+    <style>
+        table, tr, th, td {
+            border: 1px solid white;
+            padding: .7rem 1.2rem;
+        }
+    </style>
+  </head>
+  <body ng-app="">
+    <div>
+      <input type="text" placeholder="Enter Your Name..." ng-model="name" />
+      <input type="number" placeholder="Enter Your Age..." ng-model="age" />
+
+      <input type="text" placeholder=" Your Name..." ng-bind="name" />
+      <input type="number" placeholder=" Your Age..." ng-bind="age" />
+    </div>
+    <table
+      style="
+        height: fit-content;
+        width: fit-content;
+        margin: 2rem 0;
+        padding: 1rem 2rem;
+        border-radius: 0.7rem;
+        background-color: cadetblue;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        text-transform: uppercase;
+        font-size: 1rem;
+        border: 1px solid white;
+      "
+    >
+      <tr style="border: 1px solid white;">
+        <th>Name</th>
+        <th>Age</th>
+      </tr>
+      <tr>
+        <td ng-bind="name"></td>
+        <td ng-bind="age"></td>
+      </tr>
+    </table>
+    
+
+    <script src="../angular.min.js"></script>
+  </body>
+</html>
