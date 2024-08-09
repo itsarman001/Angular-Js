@@ -1,0 +1,64 @@
+:root {
+    --background: #e8e8e8;
+    --black: black;
+    --white: white;
+    --grey: #747474;
+    --border: #dbdbdb;
+    --accent: #3c6e71ff;
+    --accent-dark: #284b63ff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: var(--background);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.app-container {
+    width: 350px;
+    padding: 1rem;
+    border-radius: 1.2rem;
+    background-color: var(--white);
+}
+
+.product-container {
+    list-style: none;
+}
+
+.product-items {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 100%;
+    padding: .7rem 1.5rem;
+    margin: .5rem 0;
+    border-radius: .8rem;
+    text-transform: uppercase;
+    background-color: var(--background);
+    color: var(--black);
+    transition: background-color ease .5s;
+}
+
+.product-items:hover {
+    background-color: var(--accent);
+    color: var(--white);
+    cursor: pointer;
+}
+
+.subtotal {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--accent-dark);
+    padding: .7rem 1.5rem;
+}

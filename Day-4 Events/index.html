@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Data</title>
+    <style>
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+      }
+      th {
+        background-color: #f2f2f2;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Student Data</h1>
+    <table ng-controller="myCtrl" ng-app="myMod">
+      <thead>
+        <tr>
+          <th ng-click="myfunction('name')" >Name</th>
+          <th ng-click="myfunction('age')" >Age</th>
+          <th ng-click="myfunction('grade')" >Grade</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="student in students | orderBy:order">
+          <td>{{student.name}}</td>
+          <td>{{student.age}}</td>
+          <td>{{student.grade}}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <script src="../angular.min.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
+
+<!--  -->
