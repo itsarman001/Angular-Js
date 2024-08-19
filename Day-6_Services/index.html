@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="module">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Services</title>
+  </head>
+  <body ng-controller="controlls">
+    <button ng-click="getData()">Fill Form</button>
+    <h2 ng-bind=""></h2>
+    <script src="../angular.min.js"></script>
+    <script>
+      const app = angular.module("module", []);
+      app.controller("controlls", function ($scope, $window) {
+        $scope.getData = function(firstName, lastName, yourMessage) {
+            firstName = $window.prompt("Your First Name")
+            lastName = $window.prompt("Your Last Name")
+            yourMessage = $window.prompt("Your Message")
+
+            $window.alert(`Your name is ${firstName} ${lastName} and your message is ${yourMessage}`)
+        }
+      });
+    </script>
+  </body>
+</html>

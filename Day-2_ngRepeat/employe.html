@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="module">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employee Data</title>
+    <style>
+      label {
+        padding: 0.5rem 1rem;
+        background-color: red;
+        color: white;
+        cursor: pointer;
+      }
+      div {
+        margin: 1rem 0;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1rem 0;
+      }
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+      }
+      th {
+        background-color: #f2f2f2;
+      }
+    </style>
+  </head>
+  <body ng-controller="ctrls">
+    <div>
+      <label for="hide">Hide Salary</label>
+      <input type="checkbox" id="hide" ng-model="check" style="display: none" />
+    </div>
+    <div>
+      <table>
+        <thead>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th ng-hide="check">Salary</th>
+          <th ng-show="check">Salary</th>
+        </thead>
+        <tbody>
+          <tr ng-repeat="employee in employees">
+            <td>{{employee.id}}</td>
+            <td>{{employee.name}}</td>
+            <td>{{employee.email}}</td>
+            <td ng-hide="check">{{employee.salary}}</td>
+            <td ng-show="check">***</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <script src="../angular.min.js"></script>
+    <script>
+      const app = angular.module("module", []);
+      app.controller("ctrls", function ($scope) {
+        $scope.employees = [
+          {
+            id: 6739,
+            name: "John Doe",
+            email: "john.doe@example.com",
+            salary: 60000,
+          },
+          {
+            id: 9842,
+            name: "Jane Smith",
+            email: "jane.smith@example.com",
+            salary: 55000,
+          },
+          {
+            id: 9303,
+            name: "Alex Johnson",
+            email: "alex.johnson@example.com",
+            salary: 70000,
+          },
+        ];
+      });
+    </script>
+  </body>
+</html>
